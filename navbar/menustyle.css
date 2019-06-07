@@ -1,0 +1,326 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body .full_box.bread{
+    background-color: #5da729;/*RWD選單列底色*/
+    min-height: 20px;
+	display:none;
+}
+
+/*-------選單-------*/
+body .menu {
+   padding:0px;margin:0px;
+}
+body .menu .navbar-collapse {
+   text-align: center;   
+   height: auto !important;/*換行仍有底色*/
+}
+
+body .navbar-default {
+    background-color: #5da729;/*選單底色*/
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+body .navbar .list_lan {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 15px;
+    z-index: 99999;
+}
+body.in .navbar .list_lan {
+    bottom: 431px;
+}
+
+body .navbar .list_lan .accesskey a {
+    left: 0;
+}
+
+body.home .navbar .list_lan {
+    top: -34px;
+}
+
+body .navbar .list_lan li {
+	float: left;
+	/* margin-right: 15px; */
+	margin-left: 15px;
+}
+
+body .navbar .list_lan li a {
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    color: #000;
+    padding-left: 15px;
+}
+
+
+/********************* menu *********************/
+body .nav.navbar-nav {
+    /* width: 100%; */
+    /* text-align: center; */
+    display: inline-block;
+    float: none;
+}
+
+body .content .side1 .navbar-default .navbar-nav>li>a {
+    color: #555;
+    border-bottom: 1px #c1c1c1 solid;
+    line-height: 20px;
+}
+
+body .content .side1 .navbar-default .navbar-nav>li.end>a {
+    border: 0;
+}
+
+body .content .side1 .navbar-default .navbar-nav>li>a:focus, 
+body .content .side1 .navbar-default .navbar-nav>li>a:hover, 
+body .content .side1 .navbar-default .navbar-nav>.open>a, 
+body .content .side1 .navbar-default .navbar-nav>.open>a:focus, 
+body .content .side1 .navbar-default .navbar-nav>.open>a:hover {
+    background-color: #d6d6d6;
+    border-bottom: 1px #c1c1c1 solid;
+}
+body .content .side1 .dropdown-menu>li>a:focus, 
+body .content .side1 .dropdown-menu>li>a:hover, 
+body .content .side1 .nav .open>a, 
+body .content .side1 .nav .open>a:focus, body .nav .open>a:hover{background-color: #cbcbcb;}
+body .content .side1 .nav>li {
+    padding: 0;
+}
+body .navbar .nav>li {
+    padding: 0;
+    margin: 0 0px;/*li間距*/
+}
+body .nav>li .caret {
+    display: none;
+}
+
+body .nav .dropdown-menu >li .caret {
+    display: block;
+}
+body .navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+    font-size: 145%;
+    /* margin: 0 28px; */
+    /* padding: 0 40px; */
+    line-height: 22px;
+    text-align: center;
+    white-space: nowrap;
+    font-family:'微軟正黑體' !important;
+    padding-top:20px;
+    
+}
+body .navbar-default .navbar-nav>li>a:focus,
+body .navbar-default .navbar-nav>li>a:hover,
+body .navbar-default .navbar-nav>.open>a,
+body .navbar-default .navbar-nav>.open>a:focus,
+body .navbar-default .navbar-nav>.open>a:hover {
+    color: #313131;
+    /*background-color: #f8c013; /*L1選單底色滑過*/
+    /*border-bottom: 5px #f8c013 solid; /*L1選單滑過底線*/
+    /*text-shadow:0px 0px 5px #333333;*/
+    overflow:hidden;
+	font-weight:bold;
+}
+body .dropdown-menu {
+	background-color: #5dba79; /*L2選單底色*/
+	color: #ffffff;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	border-radius: 0;
+	max-width: none !important;
+}
+
+body .dropdown-menu ul {
+    background-color: #4b8d7f;/*L3選單底色*/
+    margin-top: -47px !important;
+}
+body .dropdown-menu>li>a{
+	color: #fff;
+	line-height: 40px;
+	font-size: 120%;
+	border-bottom: 1px #eaebed solid;/*L2選單底線*/
+	font-family:'微軟正黑體' !important;
+	}
+body .dropdown-menu>li>a:focus,
+body .dropdown-menu>li>a:hover,
+body .nav .open>a,
+body .nav .open>a:focus,
+body .nav .open>a:hover{
+	background-color: #eeeeee;/*L2選單滑過底色*/
+	color:#333333;
+	}
+body .dropdown-menu ul>li>a:focus,
+body .dropdown-menu ul>li>a:hover
+{
+	background-color: #eeeeee;/*選單L3滑過底色*/
+	color:#333333;
+	}
+body .navbar-nav:not(.sm-collapsible) ul .caret {
+    margin-top: -28px;
+}
+/*隱藏選單列*/
+
+body .menu.HideMenu {
+    height: 57px;
+    /*background-color: #ffffff;*/
+    width: 100%;
+    left: 0;
+    /*-webkit-box-shadow: 0px 8px 15px #333;
+    -moz-box-shadow: 0px 8px 15px #333;
+    box-shadow: 0px 0px 22px #555;*/
+    position: fixed !important;
+    top: 0;
+    overflow: visible;
+    z-index: 999999999 !important;
+    position:absolute;
+}
+
+
+
+@media (max-width: 768px) {
+
+/*導覽連結列*/
+body .full_box.bread{
+    /*padding: 0;*/
+	display:none; z-index:-10;
+}
+
+body .navbar-collapse {
+    background-color: #5dba79 !important;/*RWD選單L1底色*/	
+    margin: 0;
+    padding: 0;
+}
+
+body .menu .HideMenu .navbar-collapse {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    
+}
+
+body .navbar-default {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    /* padding-right: 15px; */
+    z-index: 99999;
+    /* height: 100%; */
+    /* margin-top: -51px; */
+}
+
+body .menu {
+    /* margin-top: -51px; */
+    /* position: absolute; */
+    /* top: 0; */
+}
+
+body .nav.navbar-nav{
+    margin: 0;
+    clear: both;
+    display: block;
+    background-color: #5dba79;/*RWD選單列L1底色*/
+}
+body .navbar-nav.sm-collapsible a.has-submenu{
+    padding: 0;
+}
+body .navbar-default .navbar-toggle{
+    border: none;
+    /* padding: 5px; */
+    margin-right: 5px;
+    margin-bottom: 0;
+    background-color: #acce22 !important;/*RWD選單列按鈕底色*/
+    border-radius: 0;
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+
+body .menu .navbar-default .navbar-toggle {
+    background-color: rgb(102, 188, 204);
+    z-index: 999999;
+    display: block;
+}
+
+body .menu .navbar-default .caret.navbar-toggle {
+    background-color: transparent !important;
+    top: auto;
+}
+
+body .menu .navbar-default .caret.navbar-toggle {}
+body .navbar-default .navbar-toggle:focus,body .navbar-default .navbar-toggle:hover{
+	background-color: transparent;
+	}
+
+body .menur .navbar-default .navbar-toggle:focus, body .menu .navbar-default .navbar-toggle:hover {
+    background-color: #d9e483 !important;/*RWD選單列按鈕滑過底色*/
+}
+
+body .navbar-default .navbar-toggle  .icon-bar {
+    background-color: #000;
+    height: 4px;
+    width: 25px;
+    margin-bottom: 5px;
+}
+
+body .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    line-height: 28px;/*RWD第二層行距*/
+    border-bottom: 1px #ffffff solid;/*RWD選單L1底線*/
+    padding: 5px;
+    color: #333333;/*RWDL2選單文字顏色*/
+    width: 100%;
+}
+body .navbar-default .navbar-nav>li>a{
+    line-height: 40px;
+    border-bottom: 1px #ffffff solid;/*RWD選單L1底線*/
+    padding: 0;
+    color: #ffffff;/*RWDL2選單文字顏色*/
+    width: 100%;
+}
+body .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+    border-bottom: 1px #ffffff solid;
+}
+
+body .navbar-default .navbar-nav .open .dropdown-menu>ul>li>a {}
+body .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+body .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
+    background-color: #dddddd;/*RWDL2選單滑過底色*/
+}
+body .navbar-default .navbar-nav>li>a:focus, 
+body .navbar-default .navbar-nav>li>a:hover, 
+body .navbar-default .navbar-nav>.open>a, 
+body .navbar-default .navbar-nav>.open>a:focus, 
+body .navbar-default .navbar-nav>.open>a:hover{line-height: 38px;/*border-bottom: 2px #f3d75a solid;*/}
+
+body .nav>li .caret{
+	display: block;
+	margin-top: -30px !important;
+	border: transparent;
+	background-repeat: no-repeat;
+	width: 16px !important;
+	height: 16px !important;
+	background-position: 50%;
+	position: absolute;
+	right: 10px;
+	top: 42px;
+}
+body .navbar-nav.sm-collapsible .caret:before{content: none;font-weight: normal;color: #fff;font-size: 12px;}
+body .navbar-nav .open .dropdown-menu{
+    background-color: #eaebed;/*RWDL2選單底色*/
+    text-align: left;/*RWD選單L2點下後對齊*/
+    width: 100% !important;	
+}
+
+body .navbar-nav .open .dropdown-menu ul {
+    margin-top: 0 !important;
+    background-color: #ffffff;/*RWD選單L3底色*/
+}
+body .navbar-default .navbar-nav .open .dropdown-menu ul>li>a:hover{ {   
+    background-color: #ffffff;/*RWD選單L3底色*/
+}
+
+}

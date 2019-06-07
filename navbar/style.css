@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0 auto;}
+body {background-color: #ffffff;font-family: "微軟正黑體" !important;font-size: small;}
+p {margin: 0;}
+.row {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+ul,li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*LOGO*/
+.BarTop{
+    
+	/*background-color:#f0f0f0;*/
+}
+.BarTop .Logo {
+    text-align:center;
+}
+.BarTop .Logo img {
+     vertical-align:bottom;
+}
+/*導覽連結列*/
+.BarTop .NaviLink{ float:right; padding-top:30px; letter-spacing:1.2pt;padding-right:20px;} 

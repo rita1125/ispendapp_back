@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+/*-------選單-------*/
+body .menu {
+    /*min-width: 1200px;*/text-align: center;padding:0px;margin:0px;width:100%;
+}
+.navbar-collapse {
+   text-align: center;
+   height: auto !important;/*換行仍有底色*/
+    /*min-width: 1200px;*/
+    overflow:hidden;
+    margin:0px;padding: 0px;
+}
+
+body .navbar-default {
+    background-color: #0d7644;/*選單底色*/
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/********************* menu *********************/
+body .nav.navbar-nav {margin:0px;padding:0px;width:auto;display: inline-block;}
+.navbar-collapse ul li{float:left;margin:0px;padding:0px;}
+.navbar-collapse ul li a{display: inline;padding: 5px;/*li間距*/}
+
+body .navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+    font-size: 130%;
+    /* margin: 0 28px; */
+    /* padding: 0 40px; */
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap;
+    font-family:'微軟正黑體' !important;
+    
+}
+body .navbar-default .navbar-nav>li>a:focus,
+body .navbar-default .navbar-nav>li>a:hover,
+body .navbar-default .navbar-nav>.open>a,
+body .navbar-default .navbar-nav>.open>a:focus,
+body .navbar-default .navbar-nav>.open>a:hover {
+    color: #ffffff;
+    background-color: #acce22; /*L1選單底色滑過*/
+    text-decoration:none;
+  
+}
+/*隱藏選單列*/
+
+.HideMenu {
+    left: 0;
+    position: fixed !important;
+    top: 0;
+    width:100%;
+    z-index: 999999999 !important;
+    position:absolute;
+}
+

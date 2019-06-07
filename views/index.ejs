@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>小資女愛記帳</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://unpkg.com/mathjs/dist/math.min.js"></script><!--math library for JavaScript and Node.js-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+           <a href="/accounts/create"> 
+            <button type="button" class="btn btn-success">新增消費</button>
+          </a>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <br>
+        <h1>小資女記帳</h1>
+        <p>提供記帳用途，掌握財務。可以進行新增消費、更新與刪除消費等操作。</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <table class="table table-hover">
+        <tr>
+          <th>消費名稱</th>
+          <th>類型</th>
+          <th>金額</th>
+          <th colspan="2">操作</th>
+        </tr>
+        <% for(var i = 0; i < accounts.length; i++){ %> 
+        <!--accounts來自routes資料夾的index.js中白色accounts-->
+          <tr>
+             <td><a href="/accounts/<%= accounts[i].id %>">
+                 <%= accounts[i].title %></a></td>
+             <td><%= accounts[i].type %></td>
+             <td><%= accounts[i].cost %></td>
+             <td><a href="/accounts/<%= accounts[i].id %>/update">
+                 <button class="btn btn-warning">更新</button></a>
+             </td>
+             <td>
+                 <form method="post" action="/accounts/<%= accounts[i].id %>/delete">
+                   <button type="submit" class="btn btn-danger">刪除</button>
+                 </form>
+             </td>
+          </tr>
+        <% } %>
+        <tr>
+          <td colspan="2" style="font-weight: bold;">總消費金額</td>
+          <td colspan="3">  <% var sumCost = 0;
+                   for(var i = 0; i < accounts.length; i++){ 
+                      sumCost += Number(accounts[i].cost);}
+                %> 
+                        
+            <%= sumCost %>
+         
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <footer>
+      <p>&copy; 2019 小資女記帳</p>
+      </footer>
+   </div> <!-- /container -->
+
+  </body>
+</html>
