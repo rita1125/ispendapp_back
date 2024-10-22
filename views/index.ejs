@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>小資女愛記帳</title>
+    <title>Tracking your spending</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://unpkg.com/mathjs/dist/math.min.js"></script><!--math library for JavaScript and Node.js-->
@@ -31,8 +31,9 @@
     <div class="jumbotron">
       <div class="container">
         <br>
-        <h1>小資女記帳</h1>
+        <h1>Tracking your spending</h1>
         <p>提供記帳用途，掌握財務。可以進行新增消費、更新與刪除消費等操作。</p>
+        <p>Provide accounting purposes and control finances. You can perform operations such as adding new consumption, updating and deleting consumption.</p>
       </div>
     </div>
 
@@ -43,15 +44,17 @@
           <th>消費名稱</th>
           <th>類型</th>
           <th>金額</th>
+          <th>日期</th>
           <th colspan="2">操作</th>
         </tr>
         <% for(var i = 0; i < accounts.length; i++){ %> 
-        <!--accounts來自routes資料夾的index.js中白色accounts-->
+        <!--accounts來自routes資料夾的index.js中accounts-->
           <tr>
              <td><a href="/accounts/<%= accounts[i].id %>">
                  <%= accounts[i].title %></a></td>
              <td><%= accounts[i].type %></td>
              <td><%= accounts[i].cost %></td>
+             <td><%= accounts[i].date %></td>
              <td><a href="/accounts/<%= accounts[i].id %>/update">
                  <button class="btn btn-warning">更新</button></a>
              </td>
@@ -76,7 +79,7 @@
       </table>
       <hr>
       <footer>
-      <p>&copy; 2019 小資女記帳</p>
+      <p>&copy; 2024 Tracking your spending</p>
       </footer>
    </div> <!-- /container -->
 

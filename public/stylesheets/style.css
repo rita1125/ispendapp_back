@@ -10,7 +10,7 @@ a {
 	margin-top: 60px;
 }
 
-// stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators, selector-max-class, declaration-no-important, selector-no-qualifying-type
+/* // stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators, selector-max-class, declaration-no-important, selector-no-qualifying-type
 
 //
 // Navbars
@@ -20,7 +20,7 @@ a {
 // Wrapper and base class
 //
 // Provide a static navbar from which we expand to create full-width, fixed, and
-// other navbar variations.
+// other navbar variations. */
 
 .navbar {
   position: relative;

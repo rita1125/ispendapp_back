@@ -13,7 +13,7 @@ var models = require('../models'); /*** 引進models資料庫*/
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '5001');
 app.set('port', port);
 
 /**
@@ -23,12 +23,9 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
- */
-/**
  * 啟動伺服器時，會先檢查models資料庫是否有這個table，沒有的話會自動新增
  */
-models.sequelize.sync().then(function(){
+models.sequelize.sync({ force: false }).then(function(){
     server.listen(port);
     server.on('error', onError);
     server.on('listening', onListening);
