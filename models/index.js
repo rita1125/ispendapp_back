@@ -8,20 +8,36 @@ const env = process.env.NODE_ENV || 'development';  //development對應配置文
 const config = require(__dirname + '/../config/config.json')[env];    //從配置文件 config/config.json 中讀取當前環境的資料庫設定
 const db = {};
 
-//若有 use_env_variable，則使用env中的資料庫連接資訊；反之從 config 直接讀取資料庫名稱、使用者名稱、密碼等，來初始化 Sequelize。
+
 let sequelize;
-if (config.use_env_variable) {
+//部屬到 heroku，資料庫使用 JAWSDB MYSQL
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL, {
+    dialect: 'mysql',
+    protocol: 'mysql',
+    logging: console.log, 
+  });
+ 
+  //有 use_env_variable 就使用 env 中的資料庫連接資訊；反之從 config 直接讀取資料庫名稱、使用者名稱、密碼等，來初始化 Sequelize。
+} else if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+
+// 初始化models資料夾所有模型檔案
 fs.readdirSync(__dirname)   //讀取當前資料夾(models)的所有文件。
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
-  .forEach(file => {        //將模型文件透過 sequelize.import() 載入到 Sequelize 中，並將載入的模型儲存在 db 物件中，以模型名稱為鍵
-    const model = sequelize['import'](path.join(__dirname, file));
+  //將模型文件透過 sequelize.import() 載入到 Sequelize 中，並將載入的模型儲存在 db 物件中，以模型名稱為鍵
+  // .forEach(file => {       
+  //   const model = sequelize['import'](path.join(__dirname, file));  //最新版本的 Sequelize 不再支援 sequelize.import() 改用 require
+  //   db[model.name] = model;
+  // });
+  .forEach(file => {
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
     db[model.name] = model;
   });
 
