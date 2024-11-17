@@ -19,11 +19,11 @@ router.post('/create', (req, res) => {
   })
   .then(() => {
     //res.redirect('/');  //回首頁
-    console.log('List created successfully');
+    //console.log('List created successfully');
     res.status(200).send({ success: true });
   })
   .catch(error => {
-    console.error('error create: ', error);
+    //console.error('error create: ', error);
     res.status(500).send({ success: false, error: error.message });
   });
 });
@@ -50,11 +50,11 @@ router.get('/:account_id', async (req, res) => {
       res.json(account);  // 回傳 JSON 格式的消費紀錄
     } else {
       res.status(404).json({ message: '未找到此消費資料' });  // 消費找不到時回傳 404 錯誤
-      console.log('未找到此消費資料')
+      //console.log('未找到此消費資料')
     }
   } catch (error) {
     res.status(500).json({ error: '伺服器錯誤' });  // 伺服器錯誤時回傳 500 錯誤
-    console.log('伺服器錯誤')
+    //console.log('伺服器錯誤')
   }
 });
 
@@ -67,7 +67,7 @@ router.get('/', async (req, res) => {
       res.json(accounts);  // 返回 JSON 格式的消費資料
     } catch (error) {
       res.status(500).json({ error: '無法取得消費資料' });
-      console.log('無法取得消費資料')
+      //console.log('無法取得消費資料')
     }
   });
   
@@ -116,10 +116,10 @@ router.post('/:account_id/delete', function(req, res, next) {
     where: { id: req.params.account_id }
   }).then(function() {
     // res.redirect('/');  //回首頁
-    console.log('List deleted successfully');
+    //console.log('List deleted successfully');
     res.status(200).send({ success: true }); 
   }).catch(function(error) {
-    console.error('error delete:', error);
+    //console.error('error delete:', error);
     res.status(500).send({ success: false, error: error.message });
   });
 });
